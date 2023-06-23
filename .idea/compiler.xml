@@ -10,7 +10,7 @@
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
-      <module name="MagicalBucket" target="1.8" />
+      <module name="MagicalBucket" target="19" />
     </bytecodeTargetLevel>
   </component>
 </project>

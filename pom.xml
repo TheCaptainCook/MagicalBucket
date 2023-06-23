@@ -13,10 +13,10 @@
 
     <description>A magical Bucket that never gets empty.</description>
     <properties>
-        <java.version>1.8</java.version>
+        <java.version>19</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     </properties>
-    <url>Masem.in</url>
+    <url>https://github.com/TheCaptainCook</url>
 
     <build>
         <plugins>
