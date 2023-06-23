@@ -261,5 +261,6 @@ fabric.properties
 
 # Target Ignore
 **/target
+**/target/*
 
 # End of Java,Intellij,Java-Web,Code-Java,Intellij+all,Intellij+iml
