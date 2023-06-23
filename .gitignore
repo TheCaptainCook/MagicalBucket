@@ -259,4 +259,7 @@ fabric.properties
 # .idea Ignore
 **/.idea
 
+# Target Ignore
+**/target
+
 # End of Java,Intellij,Java-Web,Code-Java,Intellij+all,Intellij+iml
