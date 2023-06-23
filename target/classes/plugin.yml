@@ -1,0 +1,8 @@
+name: MagicalBucket
+version: '1.0-PRE-SNAPSHOT'
+main: thecaptaincook.magicalbucket.MagicalBucket
+api-version: 1.20
+prefix: MWB - 
+authors: [TheCaptainCook]
+description: A magical Bucket that never gets empty.
+website: Masem.in
