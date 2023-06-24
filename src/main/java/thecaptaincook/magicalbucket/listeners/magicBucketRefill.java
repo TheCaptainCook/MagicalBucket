@@ -32,7 +32,7 @@ public class magicBucketRefill implements Listener {
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
 
         if(action == Action.RIGHT_CLICK_BLOCK && itemInHand.getType() == Material.WATER_BUCKET){
-            if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket") && ){
+            if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket") &&  ){
 
             }
         }
