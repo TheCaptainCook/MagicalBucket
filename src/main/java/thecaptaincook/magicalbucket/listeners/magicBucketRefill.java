@@ -1,5 +1,6 @@
 package thecaptaincook.magicalbucket.listeners;
 
+import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
@@ -32,8 +33,10 @@ public class magicBucketRefill implements Listener {
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
 
         if(action == Action.RIGHT_CLICK_BLOCK && itemInHand.getType() == Material.WATER_BUCKET){
-            if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket") &&  ){
-
+            if (event.getClickedBlock()!=null && itemInHand.getItemMeta()!=null){
+                if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket")){
+                    player.sendMessage("Clicked");
+                }
             }
         }
     }

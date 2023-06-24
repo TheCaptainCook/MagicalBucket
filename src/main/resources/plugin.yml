@@ -6,3 +6,10 @@ prefix: MWB -
 authors: [TheCaptainCook]
 description: A magical Bucket that never gets empty.
 website: https://github.com/TheCaptainCook
+
+commands:
+  mwb:
+    description: Infinite Water Bucket
+    usage: use /<commands><playerName> to get the Magical Bucket
+    aliases:
+      - magicalwaterbucket
