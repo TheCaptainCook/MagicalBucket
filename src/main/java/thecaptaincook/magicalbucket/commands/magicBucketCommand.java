@@ -32,7 +32,7 @@ public class magicBucketCommand implements CommandExecutor {
                 } else if (strings.length == 0) {
                     inventory.addItem(MWB);
                 } else{
-                    Player target = Bukkit.getPlayerExact(strings[0);
+                    Player target = Bukkit.getPlayerExact(strings[0]);
                     if (target == null || !target.isOnline()){
                         player.sendMessage("Player is not online");
                     }

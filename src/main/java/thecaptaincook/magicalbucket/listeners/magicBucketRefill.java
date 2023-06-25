@@ -1,19 +1,14 @@
 package thecaptaincook.magicalbucket.listeners;
 
-import org.bukkit.Location;
 import org.bukkit.Material;
 import org.bukkit.entity.Player;
 import org.bukkit.event.EventHandler;
 import org.bukkit.event.Listener;
 import org.bukkit.event.block.Action;
-import org.bukkit.event.player.PlayerBucketEmptyEvent;
 import org.bukkit.event.player.PlayerInteractEvent;
-import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import thecaptaincook.magicalbucket.MagicalBucket;
 import thecaptaincook.magicalbucket.recipe.magicBucketRecipe;
-
-import javax.swing.*;
 
 public class magicBucketRefill implements Listener {
 
@@ -30,12 +25,17 @@ public class magicBucketRefill implements Listener {
     public void onPlayerMagicalBucketUse(PlayerInteractEvent event){
         Player player = event.getPlayer();
         Action action = event.getAction();
+        ItemStack magicalWaterBucket = magicBucketRecipe.magicalWaterBucketRecipe();
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
 
         if(action == Action.RIGHT_CLICK_BLOCK && itemInHand.getType() == Material.WATER_BUCKET){
             if (event.getClickedBlock()!=null && itemInHand.getItemMeta()!=null){
                 if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket")){
+                    int magicalBucketIndex = player.getInventory().getHeldItemSlot();
                     player.sendMessage("Clicked");
+
+                    String removeItemInHand = event.getItem().getItemMeta().getDisplayName();
+                    player.sendMessage("Another Try "+ removeItemInHand);
                 }
             }
         }

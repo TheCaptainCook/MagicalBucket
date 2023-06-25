@@ -41,6 +41,7 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+                            <outputDirectory>C:\Users\sekhm\Downloads\Personal Projects\Minecraft Mod\Testing Server 1.20\plugins</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
