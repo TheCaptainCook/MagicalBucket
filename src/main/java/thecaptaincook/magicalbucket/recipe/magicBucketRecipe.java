@@ -11,11 +11,9 @@ import java.util.ArrayList;
 public class magicBucketRecipe {
 
     private final MagicalBucket plugin;
-    private final magicBucketRecipe recipeMagicalBucket;
 
     public magicBucketRecipe(MagicalBucket plugin) {
         this.plugin = plugin;
-        this.recipeMagicalBucket = new magicBucketRecipe(plugin);
     }
 
     public static ItemStack magicalWaterBucketRecipe(){

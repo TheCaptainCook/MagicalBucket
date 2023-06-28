@@ -22,23 +22,18 @@ public class magicBucketRefill implements Listener {
     }
 
     @EventHandler
-    public void onPlayerMagicalBucketUse(PlayerInteractEvent event){
+    public void onPlayerBucketDeleter(PlayerInteractEvent event){
         Player player = event.getPlayer();
         Action action = event.getAction();
-        ItemStack magicalWaterBucket = magicBucketRecipe.magicalWaterBucketRecipe();
         ItemStack itemInHand = player.getInventory().getItemInMainHand();
-
-        if(action == Action.RIGHT_CLICK_BLOCK && itemInHand.getType() == Material.WATER_BUCKET){
-            if (event.getClickedBlock()!=null && itemInHand.getItemMeta()!=null){
-                if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket")){
-                    int magicalBucketIndex = player.getInventory().getHeldItemSlot();
-                    player.sendMessage("Clicked");
-
-                    String removeItemInHand = event.getItem().getItemMeta().getDisplayName();
-                    player.sendMessage("Another Try "+ removeItemInHand);
+        int indexSlot = player.getInventory().getHeldItemSlot();
+        if (event.getClickedBlock()!=null && itemInHand.getItemMeta()!=null){
+            if (itemInHand.getItemMeta().getDisplayName().equalsIgnoreCase("Infinity Bucket")){
+                if(action == Action.RIGHT_CLICK_BLOCK && itemInHand.getType() == Material.WATER_BUCKET){
+                    player.getInventory().setItem(indexSlot, new ItemStack(Material.AIR));
+                    player.sendMessage("Inventory Item -" + player.getInventory().getItem(indexSlot));
                 }
             }
         }
     }
-
 }
