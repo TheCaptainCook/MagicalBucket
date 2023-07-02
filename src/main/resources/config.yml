@@ -1,0 +1,11 @@
+Water_Bucket :
+  displayName: "&bMagical Water Bucket"
+  displayLore: "&7A magical bucket that never gets empty."
+
+Lava_Bucket:
+  displayName: "&bMagical Lava Bucket"
+  displayLore: "&7A magical bucket that never gets empty."
+
+Command_Arguments:
+  infiniteWaterBucket : "magicalwaterbucket"
+  infiniteLavaBucket : "magicallavabucket"

@@ -10,6 +10,11 @@ website: https://github.com/TheCaptainCook
 commands:
   mwb:
     description: Infinite Water Bucket
-    usage: use /<commands><playerName> to get the Magical Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
     aliases:
       - magicalwaterbucket
+  mlb:
+    description: Infinite Lava Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicallavabucket
