@@ -1,6 +1,7 @@
 package thecaptaincook.magicalbucket;
 
 import org.bukkit.plugin.java.JavaPlugin;
+import thecaptaincook.magicalbucket.commands.magicalAxolotlBucketSummoner;
 import thecaptaincook.magicalbucket.commands.magicalLavaBucketSummoner;
 import thecaptaincook.magicalbucket.commands.magicalWaterBucketSummoner;
 import thecaptaincook.magicalbucket.listeners.magicalBucketEmpty;
@@ -21,6 +22,7 @@ public final class MagicalBucket extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new magicalBucketEmpty(this), this);
 
+        getCommand("maxb").setExecutor(new magicalAxolotlBucketSummoner(this));
         getCommand("mwb").setExecutor(new magicalWaterBucketSummoner(this));
         getCommand("mlb").setExecutor(new magicalLavaBucketSummoner(this));
 

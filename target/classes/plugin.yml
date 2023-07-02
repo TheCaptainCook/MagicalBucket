@@ -8,13 +8,53 @@ description: A magical Bucket that never gets empty.
 website: https://github.com/TheCaptainCook
 
 commands:
-  mwb:
-    description: Infinite Water Bucket
-    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+  maxb:
+    description: Infinite Axolotl Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Axolotl Bucket
     aliases:
-      - magicalwaterbucket
+      - magicalaxolotlbucket
+  mcb:
+    description: Infinite Cod Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Cod Bucket
+    aliases:
+      - magicalcodbucket
   mlb:
     description: Infinite Lava Bucket
     usage: use /<commands><playerName><bucketName> to get the Magical Bucket
     aliases:
       - magicallavabucket
+  mmb:
+    description: Infinite Milk Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicalmilkbucket
+  mpsb:
+    description: Infinite Powder Snow Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicalpowdersnowbucket
+  mpb:
+    description: Infinite Pufferfish Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicalpufferfishbucket
+  msb:
+    description: Infinite Salmon Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicalsalmonbucket
+  mtb:
+    description: Infinite Tadpole Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicaltadpolebucket
+  mtfb:
+    description: Infinite Tropical Fish Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicaltropicalfishbucket
+  mwb:
+    description: Infinite Water Bucket
+    usage: use /<commands><playerName><bucketName> to get the Magical Bucket
+    aliases:
+      - magicalwaterbucket

@@ -51,7 +51,7 @@ public class magicalLavaBucketSummoner implements CommandExecutor {
                                     return true;
                                 } else {
                                     Inventory targetInventory = target.getInventory();
-                                    ItemStack magicalLavaBucket = new magicalLavaBucketRecipe(plugin).magicalLavaBucket();
+                                    ItemStack magicalLavaBucket = new magicalLavaBucketRecipe(plugin).magicalLavaRecipe();
                                     targetInventory.addItem(magicalLavaBucket);
                                     player.sendMessage("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a §6Magical Water Bucket§7!");
                                     target.sendMessage("§6§lMagical Bucket §8» §7You have been given a §6Magical Water Bucket§7!");

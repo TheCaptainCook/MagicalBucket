@@ -11,12 +11,12 @@ import thecaptaincook.magicalbucket.MagicalBucket;
 
 import java.util.ArrayList;
 
-public class magicBucketRecipe {
+public class magicWaterBucketRecipe {
 
     private final MagicalBucket plugin;
 
 
-    public magicBucketRecipe(MagicalBucket plugin) {
+    public magicWaterBucketRecipe(MagicalBucket plugin) {
 
         this.plugin = plugin;
     }

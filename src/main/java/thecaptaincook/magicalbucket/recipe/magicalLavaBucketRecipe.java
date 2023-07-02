@@ -8,8 +8,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataType;
 import thecaptaincook.magicalbucket.MagicalBucket;
-
-import java.util.ArrayList;
+import thecaptaincook.magicalbucket.utils.colorTranslate;
 
 public class magicalLavaBucketRecipe {
 
@@ -20,23 +19,24 @@ public class magicalLavaBucketRecipe {
         this.plugin = plugin;
     }
 
-    public ItemStack magicalLavaBucket(){
-
+    public ItemStack magicalLavaRecipe(){
+        if (!plugin.getConfig().getBoolean("lava_bucket.active")) {
+            return null;
+        }
         ItemStack magicalLavaBucket = new ItemStack(Material.LAVA_BUCKET, 1);
         ItemMeta magicalLavaBucketMeta = magicalLavaBucket.getItemMeta();
-
-        magicalLavaBucketMeta.setDisplayName(plugin.getConfig().getString("Lava_Bucket.displayName"));
-        magicalLavaBucketMeta.addEnchant(Enchantment.DURABILITY, 1, true);
-
-        ArrayList<String> magicalLavaBucketLore = new ArrayList<>();
-        magicalLavaBucketLore.add(plugin.getConfig().getString("Lava_Bucket.displayLore"));
-        magicalLavaBucketMeta.setLore(magicalLavaBucketLore);
-
+        if (magicalLavaBucketMeta == null) {
+            return null;
+        }
+        magicalLavaBucketMeta.setDisplayName(colorTranslate.translateStringColor(plugin.getConfig().getString("Lava_Bucket.displayName")));
+        magicalLavaBucketMeta.addEnchant(
+                Enchantment.DURABILITY,
+                plugin.getConfig().getInt("lava_bucket.enchantment_number"),
+                plugin.getConfig().getBoolean("lava_bucket.enchantment_ignore_restriction"));
+        magicalLavaBucketMeta.setLore(colorTranslate.colorArrayTranslate(plugin.getConfig().getStringList("lava_bucket.displayLore")));
         magicalLavaBucketMeta.addItemFlags(ItemFlag.HIDE_ENCHANTS);
-        magicalLavaBucketMeta.getPersistentDataContainer().set(new NamespacedKey(plugin, "magical_bucket"), PersistentDataType.INTEGER, 1);
-
+        magicalLavaBucketMeta.getPersistentDataContainer().set(new NamespacedKey(plugin, "magical_bucket"), PersistentDataType.INTEGER, 0);
         magicalLavaBucket.setItemMeta(magicalLavaBucketMeta);
-
         return magicalLavaBucket;
     }
 }

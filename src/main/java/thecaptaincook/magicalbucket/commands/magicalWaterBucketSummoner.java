@@ -8,7 +8,7 @@ import org.bukkit.entity.Player;
 import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import thecaptaincook.magicalbucket.MagicalBucket;
-import thecaptaincook.magicalbucket.recipe.magicBucketRecipe;
+import thecaptaincook.magicalbucket.recipe.magicWaterBucketRecipe;
 
 public class magicalWaterBucketSummoner implements CommandExecutor {
 
@@ -50,8 +50,9 @@ public class magicalWaterBucketSummoner implements CommandExecutor {
                                     return true;
                                 } else {
                                     Inventory targetInventory = target.getInventory();
-                                    ItemStack magicalWaterBucket = new magicBucketRecipe(plugin).magicalWaterBucketRecipe();
+                                    ItemStack magicalWaterBucket = new magicWaterBucketRecipe(plugin).magicalWaterBucketRecipe();
                                     targetInventory.addItem(magicalWaterBucket);
+
                                     player.sendMessage("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a §6Magical Water Bucket§7!");
                                     target.sendMessage("§6§lMagical Bucket §8» §7You have been given a §6Magical Water Bucket§7!");
                                     return true;
