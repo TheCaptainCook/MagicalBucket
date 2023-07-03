@@ -9,16 +9,10 @@ public final class MagicalBucket extends JavaPlugin {
     @Override
     public void onEnable() {
         // Plugin startup logic
-
-
-
         System.out.println("Plugin Starting");
-
 
         getConfig().options().copyDefaults();
         saveDefaultConfig();
-
-
 
         getServer().getPluginManager().registerEvents(new magicalBucketEmpty(this), this);
 
@@ -26,12 +20,12 @@ public final class MagicalBucket extends JavaPlugin {
         getCommand("mcb").setExecutor(new magicalCodBucketSummoner(this));
         getCommand("mlb").setExecutor(new magicalLavaBucketSummoner(this));
         getCommand("mmb").setExecutor(new magicalMilkBucketSummoner(this));
-
+        getCommand("mpsb").setExecutor(new magicalPowerSnowBucketSummoner(this));
+        getCommand("mpb").setExecutor(new magicalPufferFishSummoner(this));
+        getCommand("msb").setExecutor(new magicalSamonBucketSummoner(this));
+        getCommand("mtb").setExecutor(new magicalTadpoleBucketSummoner(this));
+        getCommand("mtfb").setExecutor(new magicalTropicalFishSummoner(this));
         getCommand("mwb").setExecutor(new magicalWaterBucketSummoner(this));
-
-
-
-
     }
 
     @Override
