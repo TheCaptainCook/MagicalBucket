@@ -1,5 +1,5 @@
 axolotl_bucket:
-  active: true                              // If you want to disable this bucket, set this to false
+  active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Axolotl Bucket"
   displayLore:
     - "&7===================="
@@ -13,7 +13,7 @@ axolotl_bucket:
   enchantment_ignore_restriction: true
 
 cod_bucket :
-    active: true                          //  If you want to disable this bucket, set this to false
+    active: true # If you want to disable this bucket, set this to false
     displayName: "&bMagical Cod Bucket"
     displayLore:
         - "&7===================="
@@ -27,7 +27,7 @@ cod_bucket :
     enchantment_ignore_restriction: true
 
 lava_bucket:
-  active : true                           // If you want to disable this bucket, set this to false
+  active : true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Lava Bucket"
   displayLore:
     - "&7===================="
@@ -41,7 +41,7 @@ lava_bucket:
   enchantment_ignore_restriction: true
 
 Milk_Bucket:
-    active: true                            // If you want to disable this bucket, set this to false
+    active: true #If you want to disable this bucket, set this to false
     displayName: "&bMagical Milk Bucket"
     displayLore:
       - "&7===================="
@@ -55,7 +55,7 @@ Milk_Bucket:
     enchantment_ignore_restriction: true
 
 powder_snow_bucket:
-  active: true                                    // If you want to disable this bucket, set this to false
+  active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Powder Snow Bucket"
   displayLore:
     - "&7===================="
@@ -69,7 +69,7 @@ powder_snow_bucket:
   enchantment_ignore_restriction: true
 
 puffer_fish_bucket:
-  active: true                                    // If you want to disable this bucket, set this to false
+  active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Puffer fish Bucket"
   displayLore:
     - "&7===================="
@@ -83,7 +83,7 @@ puffer_fish_bucket:
   enchantment_ignore_restriction: true
 
 salmon_bucket:
-    active: true                              // If you want to disable this bucket, set this to false
+    active: true #If you want to disable this bucket, set this to false
     displayName: "&bMagical Salmon Bucket"
     displayLore:
       - "&7===================="
@@ -97,7 +97,7 @@ salmon_bucket:
     enchantment_ignore_restriction: true
 
 tadpole_bucket:
-  active: true                                  // If you want to disable this bucket, set this to false
+  active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Tadpole Bucket"
   displayLore:
     - "&7===================="
@@ -111,7 +111,7 @@ tadpole_bucket:
   enchantment_ignore_restriction: true
 
 tropical_fish_bucket:
-    active: true                                    // If you want to disable this bucket, set this to false
+    active: true #If you want to disable this bucket, set this to false
     displayName: "&bMagical Tropical Fish Bucket"
     displayLore:
       - "&7===================="
@@ -125,7 +125,7 @@ tropical_fish_bucket:
     enchantment_ignore_restriction: true
 
 Water_Bucket :
-  active: true                                    // If you want to disable this bucket, set this to false
+  active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Water Bucket"
   displayLore:
     - "&7===================="

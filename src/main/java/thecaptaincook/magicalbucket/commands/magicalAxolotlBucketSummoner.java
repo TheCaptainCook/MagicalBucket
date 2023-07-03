@@ -8,6 +8,7 @@ import org.bukkit.inventory.Inventory;
 import org.bukkit.inventory.ItemStack;
 import thecaptaincook.magicalbucket.MagicalBucket;
 import thecaptaincook.magicalbucket.recipe.magicalAxolotlBucketRecipe;
+import thecaptaincook.magicalbucket.utils.colorTranslate;
 
 public class magicalAxolotlBucketSummoner implements CommandExecutor {
 
@@ -25,12 +26,12 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
                 if (player.hasPermission("magical_axolotl_bucket.admin")) {
                     if (command.getName().equalsIgnoreCase("maxb") || command.getName().equalsIgnoreCase("magicalaxolotlbucket")) {
                         if (strings.length == 0) {
-                            player.sendMessage("§6§HHey there! §7You can use the following commands:");
-                            player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");
+                            player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
+                            player.sendMessage("§6§lMagical Bucket §8» §7Use /magicalaxolotlbucket give <player>");
                             return true;
                         } else if (strings.length == 1) {
                             if (strings[0].equalsIgnoreCase("reload")) {
-                                if (player.hasPermission("magical_axolotl_bucket.reload")) {
+                                if (player.hasPermission("magical_axolotl_bucket.reloadConfig")) {
                                     plugin.reloadConfig();
                                     player.sendMessage("§6§lMagical Bucket §8» §7Config reloaded!");
                                 } else {
@@ -38,8 +39,8 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
                                     return true;
                                 }
                             } else {
-                                player.sendMessage("§6§HHey there! §7You can use the following commands:");
-                                player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");
+                                player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
+                                player.sendMessage("§6§lMagical Bucket §8» §7Use /magicalaxolotlbucket reload");
                                 return true;
                             }
                         } else if (strings.length == 2) {
@@ -62,21 +63,31 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
                                     return true;
                                 }
                             } else {
-                                player.sendMessage("§6§HHey there! §7You can use the following commands:");
+                                player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
                                 player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");
                                 return true;
                             }
                         } else {
-                            player.sendMessage("§6§lMagical Bucket §8» §7You do not have permission to use this command!");
+                            player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
+                            player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");
                             return true;
                         }
                     } else {
-                        commandSender.sendMessage("Axolotl Bucket Plugin is not active");
-                        player.sendMessage("Axolotl Bucket is not active");
+                        player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
+                        player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");
                         return true;
                     }
+                }else {
+                    player.sendMessage("§6§lMagical Bucket §8» §7You do not have permission to use this command!");
+                    return true;
                 }
+            } else {
+                player.sendMessage("&c§6§lMagical Bucket §8» &cThis feature is disabled in the config!");
+                return true;
             }
+        }else {
+            commandSender.sendMessage(colorTranslate.translateStringColor("&6&lMagical Bucket &8» &7This command can only be used by players!"));
+            return true;
         }
         return true;
     }
