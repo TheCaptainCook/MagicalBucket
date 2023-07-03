@@ -40,7 +40,7 @@ lava_bucket:
   enchantment_number: 2
   enchantment_ignore_restriction: true
 
-Milk_Bucket:
+milk_bucket:
     active: true #If you want to disable this bucket, set this to false
     displayName: "&bMagical Milk Bucket"
     displayLore:
@@ -137,7 +137,3 @@ Water_Bucket :
     - "&7===================="
   enchantment_number: 2
   enchantment_ignore_restriction: true
-
-Command_Arguments:
-  infiniteWaterBucket : "magicalwaterbucket"
-  infiniteLavaBucket : "magicallavabucket"

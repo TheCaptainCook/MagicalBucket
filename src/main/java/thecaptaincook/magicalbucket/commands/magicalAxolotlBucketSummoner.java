@@ -23,7 +23,7 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player player) {
             if (plugin.getConfig().getBoolean("axolotl_bucket.active")) {
-                if (player.hasPermission("magical_axolotl_bucket.admin")) {
+                if (player.hasPermission("axolotl_bucket.player_permission")) {
                     if (command.getName().equalsIgnoreCase("maxb") || command.getName().equalsIgnoreCase("magicalaxolotlbucket")) {
                         if (strings.length == 0) {
                             player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
@@ -31,7 +31,7 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
                             return true;
                         } else if (strings.length == 1) {
                             if (strings[0].equalsIgnoreCase("reload")) {
-                                if (player.hasPermission("magical_axolotl_bucket.reloadConfig")) {
+                                if (player.hasPermission("axolotl_bucket.config_reload")) {
                                     plugin.reloadConfig();
                                     player.sendMessage("§6§lMagical Bucket §8» §7Config reloaded!");
                                 } else {
@@ -45,7 +45,7 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
                             }
                         } else if (strings.length == 2) {
                             if (strings[0].equalsIgnoreCase("give")) {
-                                if (player.hasPermission("magical_axolotl_bucket.give")) {
+                                if (player.hasPermission("axolotl_bucket.give_bucket")) {
                                     Player target = player.getServer().getPlayerExact(strings[1]);
                                     if (target == null) {
                                         player.sendMessage("§6§lMagical Bucket §8» §7That player is not online!");

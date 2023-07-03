@@ -12,6 +12,7 @@ import org.bukkit.inventory.ItemStack;
 import org.bukkit.inventory.meta.ItemMeta;
 import org.bukkit.persistence.PersistentDataContainer;
 import org.bukkit.persistence.PersistentDataType;
+import org.bukkit.potion.PotionEffect;
 import thecaptaincook.magicalbucket.MagicalBucket;
 
 public class magicalBucketEmpty implements Listener {
@@ -53,12 +54,30 @@ public class magicalBucketEmpty implements Listener {
                     if(magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("axolotl_bucket.displayName"))){
                        player.getWorld().getBlockAt(x, y, z).setType(Material.AXOLOTL_BUCKET);
                        player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
-                    }
-                    if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("Water_Bucket.displayName"))) {
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("cod_bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.COD_BUCKET);
                         player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
-                    }
-                    else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("Lava_Bucket.displayName"))) {
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("Lava_Bucket.displayName"))) {
                         player.getWorld().getBlockAt(x, y, z).setType(Material.LAVA);
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("milk_bucket.displayName"))) {
+                        for (PotionEffect effect : player.getActivePotionEffects())
+                            player.removePotionEffect(effect.getType());
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("powder_snow_bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.POWDER_SNOW);
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("puffer_fish_bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.PUFFERFISH);
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("salmon_bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.SALMON_BUCKET);
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("tadpole_bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.TADPOLE_BUCKET);
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("tropical_fish_bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.TROPICAL_FISH_BUCKET);
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
+                    } else if (magicalBucket.getItemMeta().getDisplayName().equalsIgnoreCase(plugin.getConfig().getString("Water_Bucket.displayName"))) {
+                        player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
                     }
                     //player.getWorld().getBlockAt(x, y, z).setType(Material.WATER);
                 }

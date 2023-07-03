@@ -1,0 +1,42 @@
+permissions:
+  axolotl_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+    command_disable: false #If you want to disable this command, set this to true
+  cod_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  lava_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  milk_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  powder_snow_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  puffer_fish_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  salmon_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  tadpole_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  tropical_fish_bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false
+  Water_Bucket:
+    player_permission: true #If you want to disable this bucket, set this to false
+    config_reload: true #If you want to disable this bucket to reload its config, set this to false
+    give_bucket: true #If you want to disable this bucket to give its bucket, set this to false

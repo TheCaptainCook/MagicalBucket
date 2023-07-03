@@ -22,12 +22,12 @@ public class magicalCodBucketSummoner implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player player){
             if (plugin.getConfig().getBoolean("cod_bucket.active")){
-                if (player.hasPermission("magical_cod_bucket.admin")){
+                if (player.hasPermission("cod_bucket.player_permission")){
                     if (command.getName().equalsIgnoreCase("mcb")|| command.getName().equalsIgnoreCase("magicalcodbucket")){
                         switch (strings.length){
                             case 2:
                                 if (strings[0].equalsIgnoreCase("reload")){
-                                    if (player.hasPermission("magical_cod_bucket.reloadConfig")){
+                                    if (player.hasPermission("cod_bucket.config_reload")){
                                         plugin.reloadConfig();
                                         player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
                                     }else{
@@ -42,7 +42,7 @@ public class magicalCodBucketSummoner implements CommandExecutor {
                                 break;
                             case 3:
                                 if (strings[0].equalsIgnoreCase("give")){
-                                    if (player.hasPermission("give.allow")){
+                                    if (player.hasPermission("cod_bucket.give_bucket")){
                                         Player target = player.getServer().getPlayer(strings[1]);
                                         if (target == null){
                                             player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Player not found!"));

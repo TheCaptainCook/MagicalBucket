@@ -23,12 +23,12 @@ public class magicalLavaBucketSummoner implements CommandExecutor {
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player player) {
             if (plugin.getConfig().getBoolean("lava_bucket.active")){
-                if (player.hasPermission("magical_lava_bucket.admin")){
+                if (player.hasPermission("lava_bucket.player_permission")){
                     if (command.getName().equalsIgnoreCase("mlb") || command.getName().equalsIgnoreCase("magicallavabucket")){
                         switch(strings.length) {
                             case 2:
                                 if (strings[0].equalsIgnoreCase("reload")) {
-                                    if (player.hasPermission("magical_lava_bucket.reloadConfig")) {
+                                    if (player.hasPermission("lava_bucket.config_reload")) {
                                         plugin.reloadConfig();
                                         player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
                                     } else {
@@ -43,7 +43,7 @@ public class magicalLavaBucketSummoner implements CommandExecutor {
                                 break;
                             case 3:
                                 if (strings[0].equalsIgnoreCase("give")){
-                                    if (player.hasPermission("give.allow")){
+                                    if (player.hasPermission("lava_bucket.give_bucket")){
                                         Player targetPlayer = Bukkit.getPlayer(strings[1]);
                                         if (targetPlayer == null){
                                             player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7That player is not online!"));
