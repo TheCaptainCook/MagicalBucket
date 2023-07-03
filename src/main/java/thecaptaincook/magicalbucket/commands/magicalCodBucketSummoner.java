@@ -32,6 +32,7 @@ public class magicalCodBucketSummoner implements CommandExecutor {
                                         player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
                                     }else{
                                         player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
+                                        break;
                                     }
                                 }else{
                                     player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
@@ -41,7 +42,7 @@ public class magicalCodBucketSummoner implements CommandExecutor {
                                 break;
                             case 3:
                                 if (strings[0].equalsIgnoreCase("give")){
-                                    if (player.hasPermission("give")){
+                                    if (player.hasPermission("give.allow")){
                                         Player target = player.getServer().getPlayer(strings[1]);
                                         if (target == null){
                                             player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Player not found!"));
@@ -49,7 +50,7 @@ public class magicalCodBucketSummoner implements CommandExecutor {
                                             Inventory targetInventory = target.getInventory();
                                             ItemStack magicalCod = new magicalCodBucketRecipe(plugin).magicalCodRecipe();
                                             targetInventory.addItem(magicalCod);
-                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a magical cod bucket!"));
+                                            target.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a magical cod bucket!"));
                                             player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given yourself a magical cod bucket!"));
                                             break;
                                         }
@@ -77,7 +78,7 @@ public class magicalCodBucketSummoner implements CommandExecutor {
                     return true;
                 }
             }else {
-                player.sendMessage(colorTranslate.translateStringColor("&c§6§lMagical Bucket §8» &cThis feature is disabled in the config!"));
+                player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7This recipe is disabled!"));
                 return true;
             }
         } else {
