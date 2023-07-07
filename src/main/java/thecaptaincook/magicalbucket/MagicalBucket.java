@@ -6,6 +6,12 @@ import thecaptaincook.magicalbucket.listeners.magicalBucketEmpty;
 
 public final class MagicalBucket extends JavaPlugin {
 
+    private final MagicalBucket plugin;
+
+    public MagicalBucket(MagicalBucket plugin) {
+        this.plugin = plugin;
+    }
+
     @Override
     public void onEnable() {
         // Plugin startup logic
@@ -16,8 +22,12 @@ public final class MagicalBucket extends JavaPlugin {
 
         getServer().getPluginManager().registerEvents(new magicalBucketEmpty(this), this);
 
-        getCommand("maxb").setExecutor(new magicalAxolotlBucketSummoner(this));
-        getCommand("mcb").setExecutor(new magicalCodBucketSummoner(this));
+        if (plugin.getConfig().getBoolean("axolotl_bucket.command_active")) {
+            getCommand("maxb").setExecutor(new magicalAxolotlBucketSummoner(this));
+        }
+        if (plugin.getConfig().getBoolean("cod_bucket.command_active")) {
+            getCommand("mcb").setExecutor(new magicalCodBucketSummoner(this));
+        }
         getCommand("mlb").setExecutor(new magicalLavaBucketSummoner(this));
         getCommand("mmb").setExecutor(new magicalMilkBucketSummoner(this));
         getCommand("mpsb").setExecutor(new magicalPowerSnowBucketSummoner(this));

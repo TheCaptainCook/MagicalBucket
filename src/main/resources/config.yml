@@ -1,4 +1,5 @@
 axolotl_bucket:
+  command_active: true; #If you want to disable this command, set this to false
   active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Axolotl Bucket"
   displayLore:
@@ -13,20 +14,22 @@ axolotl_bucket:
   enchantment_ignore_restriction: true
 
 cod_bucket :
-    active: true # If you want to disable this bucket, set this to false
-    displayName: "&bMagical Cod Bucket"
-    displayLore:
-        - "&7===================="
-        - "&7A Magical Cod bucket"
-        - "&7that never gets empty."
-        - "&7A bucket that can be "
-        - "&7used to spawn infinite"
-        - "&7cods in world."
-        - "&7===================="
-    enchantment_number: 2
-    enchantment_ignore_restriction: true
+  command_active: true; #If you want to disable this command, set this to false
+  active: true # If you want to disable this bucket, set this to false
+  displayName: "&bMagical Cod Bucket"
+  displayLore:
+      - "&7===================="
+      - "&7A Magical Cod bucket"
+      - "&7that never gets empty."
+      - "&7A bucket that can be "
+      - "&7used to spawn infinite"
+      - "&7cods in world."
+      - "&7===================="
+  enchantment_number: 2
+  enchantment_ignore_restriction: true
 
 lava_bucket:
+  command_active: true; #If you want to disable this command, set this to false
   active : true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Lava Bucket"
   displayLore:
@@ -41,20 +44,22 @@ lava_bucket:
   enchantment_ignore_restriction: true
 
 milk_bucket:
-    active: true #If you want to disable this bucket, set this to false
-    displayName: "&bMagical Milk Bucket"
-    displayLore:
-      - "&7===================="
-      - "&7A Magical Milk bucket"
-      - "&7that never gets empty."
-      - "&7A bucket that can be "
-      - "&7used to drink infinite"
-      - "&7number of milk."
-      - "&7===================="
-    enchantment_number: 2
-    enchantment_ignore_restriction: true
+  command_active: true; #If you want to disable this command, set this to false
+  active: true #If you want to disable this bucket, set this to false
+  displayName: "&bMagical Milk Bucket"
+  displayLore:
+    - "&7===================="
+    - "&7A Magical Milk bucket"
+    - "&7that never gets empty."
+    - "&7A bucket that can be "
+    - "&7used to drink infinite"
+    - "&7number of milk."
+    - "&7===================="
+  enchantment_number: 2
+  enchantment_ignore_restriction: true
 
 powder_snow_bucket:
+  command_active: true; #If you want to disable this command, set this to false
   active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Powder Snow Bucket"
   displayLore:
@@ -69,6 +74,7 @@ powder_snow_bucket:
   enchantment_ignore_restriction: true
 
 puffer_fish_bucket:
+  command_active: true; #If you want to disable this command, set this to false
   active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Puffer fish Bucket"
   displayLore:
@@ -83,20 +89,22 @@ puffer_fish_bucket:
   enchantment_ignore_restriction: true
 
 salmon_bucket:
-    active: true #If you want to disable this bucket, set this to false
-    displayName: "&bMagical Salmon Bucket"
-    displayLore:
-      - "&7===================="
-      -  "&7A Magical Salmon bucket"
-      -  "&7that never gets empty."
-      - "&7A bucket that can be "
-      - "&7used to spawn infinite"
-      - "&7salmon in world."
-      - "&7===================="
-    enchantment_number: 2
-    enchantment_ignore_restriction: true
+  command_active: true; #If you want to disable this command, set this to false
+  active: true #If you want to disable this bucket, set this to false
+  displayName: "&bMagical Salmon Bucket"
+  displayLore:
+    - "&7===================="
+    -  "&7A Magical Salmon bucket"
+    -  "&7that never gets empty."
+    - "&7A bucket that can be "
+    - "&7used to spawn infinite"
+    - "&7salmon in world."
+    - "&7===================="
+  enchantment_number: 2
+  enchantment_ignore_restriction: true
 
 tadpole_bucket:
+  command_active: true; #If you want to disable this command, set this to false
   active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Tadpole Bucket"
   displayLore:
@@ -111,20 +119,22 @@ tadpole_bucket:
   enchantment_ignore_restriction: true
 
 tropical_fish_bucket:
-    active: true #If you want to disable this bucket, set this to false
-    displayName: "&bMagical Tropical Fish Bucket"
-    displayLore:
-      - "&7===================="
-      - "&7A Magical Tropical Fish bucket"
-      - "&7that never gets empty."
-      - "&7A bucket that can be "
-      - "&7used to spawn infinite"
-      - "&7tropical fish in world."
-      - "&7===================="
-    enchantment_number: 2
-    enchantment_ignore_restriction: true
+  command_active: true; #If you want to disable this command, set this to false
+  active: true #If you want to disable this bucket, set this to false
+  displayName: "&bMagical Tropical Fish Bucket"
+  displayLore:
+    - "&7===================="
+    - "&7A Magical Tropical Fish bucket"
+    - "&7that never gets empty."
+    - "&7A bucket that can be "
+    - "&7used to spawn infinite"
+    - "&7tropical fish in world."
+    - "&7===================="
+  enchantment_number: 2
+  enchantment_ignore_restriction: true
 
 Water_Bucket :
+  command_active: true; #If you want to disable this command, set this to false
   active: true #If you want to disable this bucket, set this to false
   displayName: "&bMagical Water Bucket"
   displayLore:
