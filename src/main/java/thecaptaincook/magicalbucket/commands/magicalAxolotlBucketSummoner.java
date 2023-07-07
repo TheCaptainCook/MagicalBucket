@@ -49,24 +49,24 @@ public class magicalAxolotlBucketSummoner implements CommandExecutor {
                                     Player target = player.getServer().getPlayerExact(strings[1]);
                                     if (target == null) {
                                         player.sendMessage("§6§lMagical Bucket §8» §7That player is not online!");
-                                        return true;
                                     } else {
                                         Inventory targetInventory = target.getInventory();
                                         ItemStack magicalAxolotlBucket = new magicalAxolotlBucketRecipe(plugin).AxolotlRecipe();
                                         targetInventory.addItem(magicalAxolotlBucket);
-                                        player.sendMessage("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a §6Magical Axolotl Bucket§7!");
-                                        target.sendMessage("§6§lMagical Bucket §8» §7You have been given a §6Magical Axolotl Bucket§7!");
-                                        return true;
+                                        if (target != player){
+                                            player.sendMessage("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a §6Magical Axolotl Bucket by §6" + player.getName() + "§7!");
+                                        } else{
+                                            target.sendMessage("§6§lMagical Bucket §8» §7You have been given a §6Magical Axolotl Bucket§7!");
+                                        }
                                     }
                                 } else {
                                     player.sendMessage("§6§lMagical Bucket §8» §7You do not have permission to use this command!");
-                                    return true;
                                 }
                             } else {
                                 player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
                                 player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");
-                                return true;
                             }
+                            return true;
                         } else {
                             player.sendMessage("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:");
                             player.sendMessage("§6§lMagical Bucket §8» §7/magicalaxolotlbucket give <player>");

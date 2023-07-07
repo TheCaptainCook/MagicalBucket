@@ -33,7 +33,7 @@ commands:
     usage: use /<commands><playerName><bucketName> to get the Magical Bucket
     aliases:
       - magicalpowdersnowbucket
-  mpb:
+  mpfb:
     description: Infinite Pufferfish Bucket
     usage: use /<commands><playerName><bucketName> to get the Magical Bucket
     aliases:

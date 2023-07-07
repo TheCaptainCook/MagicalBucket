@@ -21,7 +21,7 @@ public final class MagicalBucket extends JavaPlugin {
         getCommand("mlb").setExecutor(new magicalLavaBucketSummoner(this));
         getCommand("mmb").setExecutor(new magicalMilkBucketSummoner(this));
         getCommand("mpsb").setExecutor(new magicalPowerSnowBucketSummoner(this));
-        getCommand("mpb").setExecutor(new magicalPufferFishSummoner(this));
+        getCommand("mpfb").setExecutor(new magicalPufferFishSummoner(this));
         getCommand("msb").setExecutor(new magicalSamonBucketSummoner(this));
         getCommand("mtb").setExecutor(new magicalTadpoleBucketSummoner(this));
         getCommand("mtfb").setExecutor(new magicalTropicalFishSummoner(this));

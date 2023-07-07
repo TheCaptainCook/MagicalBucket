@@ -26,50 +26,50 @@ public class magicalPowerSnowBucketSummoner implements CommandExecutor {
             if (plugin.getConfig().getBoolean("powder_snow_bucket.active")){
                 if (player.hasPermission("powder_snow_bucket.player_permission")){
                     if (command.getName().equalsIgnoreCase("mpsb") || command.getName().equalsIgnoreCase("magicalpowdersnowbucket")){
-                        switch(strings.length) {
-                            case 2:
-                                if (strings[0].equalsIgnoreCase("reload")) {
-                                    if (player.hasPermission("powder_snow_bucket.config_reload")) {
-                                        plugin.reloadConfig();
-                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
-                                    } else {
-                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
-                                        break;
-                                    }
-                                }else {
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicalpowdersnowbucket give <player>"));
-                                    break;
+                        if (strings.length == 1) {
+                            if (strings[0].equalsIgnoreCase("reload")) {
+                                if (player.hasPermission("powder_snow_bucket.config_reload")) {
+                                    plugin.reloadConfig();
+                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
+                                } else {
+                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
                                 }
-                                break;
-                            case 3:
-                                if (strings[0].equalsIgnoreCase("give")){
-                                    if (player.hasPermission("powder_snow_bucket.give_bucket")){
-                                        Player targetPlayer = Bukkit.getPlayer(strings[1]);
-                                        if (targetPlayer == null){
-                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7That player is not online!"));
-                                            break;
-                                        }else {
-                                            Inventory targetInventory = targetPlayer.getInventory();
-                                            ItemStack powderSnowBucket = new magicalPowderSnowBucketRecipe(plugin).magicalPowerSnowRecipe();
-                                            targetInventory.addItem(powderSnowBucket);
-                                            targetPlayer.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given §6" + targetPlayer.getName() + " §7a magical Powder Snow bucket!"));
-                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given yourself a magical Powder Snow bucket!"));
-                                            break;
+                                return true;
+                            } else {
+                                player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
+                                player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicalpowdersnowbucket reload"));
+                            }
+                            return true;
+                        } else if(strings.length == 2) {
+                            if (strings[0].equalsIgnoreCase("give")) {
+                                if (player.hasPermission("powder_snow_bucket.give_bucket")) {
+                                    Player targetPlayer = Bukkit.getPlayer(strings[1]);
+                                    if (targetPlayer == null) {
+                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7That player is not online!"));
+                                    } else {
+                                        Inventory targetInventory = targetPlayer.getInventory();
+                                        ItemStack powderSnowBucket = new magicalPowderSnowBucketRecipe(plugin).magicalPowerSnowRecipe();
+                                        targetInventory.addItem(powderSnowBucket);
+                                        if (targetPlayer != player) {
+                                            targetPlayer.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given §6" + targetPlayer.getName() + " §7a magical milk bucket by §6" + player.getName() + "§7!"));
+                                        } else {
+                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given yourself a magical milk bucket!"));
                                         }
-                                    } else {
-                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
-                                        break;
+                                        return true;
                                     }
-                                }else {
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicalpowdersnowbucket give <player>"));
+                                } else {
+                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
+                                    return true;
                                 }
-                                break;
-                            default:
+                            } else {
                                 player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
                                 player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicalpowdersnowbucket give <player>"));
-                                break;
+                                return true;
+                            }
+                        }else {
+                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
+                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicalpowdersnowbucket give <player>"));
+                            return true;
                         }
                     }else{
                         player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));

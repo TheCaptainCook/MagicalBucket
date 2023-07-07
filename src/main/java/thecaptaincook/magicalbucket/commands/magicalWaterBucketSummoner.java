@@ -52,9 +52,11 @@ public class magicalWaterBucketSummoner implements CommandExecutor {
                                     Inventory targetInventory = target.getInventory();
                                     ItemStack magicalWaterBucket = new magicWaterBucketRecipe(plugin).magicalWaterBucketRecipe();
                                     targetInventory.addItem(magicalWaterBucket);
-
-                                    player.sendMessage("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a §6Magical Water Bucket§7!");
-                                    target.sendMessage("§6§lMagical Bucket §8» §7You have been given a §6Magical Water Bucket§7!");
+                                    if (target != player) {
+                                        player.sendMessage("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a §6Magical Water Bucket by §6" + player.getName() + "§7!");
+                                    }else {
+                                        target.sendMessage("§6§lMagical Bucket §8» §7You have been given a §6Magical Water Bucket§7!" + player.getName());
+                                    }
                                     return true;
                                 }
                             } else {

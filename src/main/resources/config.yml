@@ -9,7 +9,7 @@ axolotl_bucket:
     - "&7used to spawn infinite"
     - "&7axolotls in world."
     - "&7===================="
-  enchantment_value: 2
+  enchantment_number: 2
   enchantment_ignore_restriction: true
 
 cod_bucket :

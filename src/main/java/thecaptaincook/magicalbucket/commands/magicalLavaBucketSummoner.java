@@ -22,69 +22,71 @@ public class magicalLavaBucketSummoner implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender commandSender, Command command, String s, String[] strings) {
         if (commandSender instanceof Player player) {
-            if (plugin.getConfig().getBoolean("lava_bucket.active")){
-                if (player.hasPermission("lava_bucket.player_permission")){
-                    if (command.getName().equalsIgnoreCase("mlb") || command.getName().equalsIgnoreCase("magicallavabucket")){
-                        switch(strings.length) {
-                            case 2:
-                                if (strings[0].equalsIgnoreCase("reload")) {
-                                    if (player.hasPermission("lava_bucket.config_reload")) {
-                                        plugin.reloadConfig();
-                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
-                                    } else {
-                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
-                                        break;
-                                    }
-                                }else {
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
-                                    break;
+            if (plugin.getConfig().getBoolean("lava_bucket.active")) {
+                if (player.hasPermission("lava_bucket.player_permission")) {
+                    if (command.getName().equalsIgnoreCase("mlb") || command.getName().equalsIgnoreCase("magicallavabucket")) {
+                        if (strings.length == 0) {
+                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
+                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
+                        } else if (strings.length == 1) {
+                            if (strings[0].equalsIgnoreCase("reload")) {
+                                if (player.hasPermission("lava_bucket.config_reload")) {
+                                    plugin.reloadConfig();
+                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Config reloaded!"));
+                                } else {
+                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
+                                    return true;
                                 }
-                                break;
-                            case 3:
-                                if (strings[0].equalsIgnoreCase("give")){
-                                    if (player.hasPermission("lava_bucket.give_bucket")){
-                                        Player targetPlayer = Bukkit.getPlayer(strings[1]);
-                                        if (targetPlayer == null){
-                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7That player is not online!"));
-                                            break;
-                                        }else {
-                                            Inventory targetInventory = targetPlayer.getInventory();
-                                            ItemStack magicalLavaBucket = new magicalLavaBucketRecipe(plugin).magicalLavaRecipe();
-                                            targetInventory.addItem(magicalLavaBucket);
-                                            targetPlayer.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given §6" + targetPlayer.getName() + " §7a magical lava bucket!"));
-                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given yourself a magical lava bucket!"));
-                                            break;
-                                        }
-                                    } else {
-                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
-                                        break;
-                                    }
-                                }else {
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
-                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
-                                }
-                                break;
-                            default:
+                            } else {
                                 player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
                                 player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
-                                break;
+                                return true;
+                            }
+                        } else if (strings.length == 2) {
+                            if (strings[0].equalsIgnoreCase("give")) {
+                                if (player.hasPermission("lava_bucket.give_bucket")) {
+                                    Player target = Bukkit.getServer().getPlayerExact(strings[1]);
+                                    if (target == null) {
+                                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Player not found!"));
+                                        return true;
+                                    } else {
+                                        Inventory targetInventory = target.getInventory();
+                                        ItemStack magicalLava = new magicalLavaBucketRecipe(plugin).magicalLavaRecipe();
+                                        targetInventory.addItem(magicalLava);
+                                        if (target != player) {
+                                            target.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given §6" + target.getName() + " §7a Magical Lava Bucket by §6" + player.getName() + "§7!"));
+                                        }else {
+                                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You have given yourself a Magical Lava Bucket!"));
+                                        }
+                                        return true;
+                                    }
+                                } else {
+                                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
+                                    return true;
+                                }
+                            } else {
+                                player.sendMessage("§6§lMagical Bucket §8» §6The command you entered is invalid!");
+                                return true;
+                            }
+                        } else {
+                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
+                            player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
                         }
-                    }else{
+                    } else {
                         player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
-                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicalcodbucket give <player>"));
-                        return true;
+                        player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
                     }
-                }else {
-                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You do not have permission to use this command!"));
+                } else {
+                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §6§HHey there! §7You can use the following commands:"));
+                    player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7Use /magicallavabucket give <player>"));
                     return true;
                 }
-            }else {
-                commandSender.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7This recipe is disabled!"));
+            } else {
+                player.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7This recipe is disabled!"));
                 return true;
             }
-        }else{
-            commandSender.sendMessage(colorTranslate.translateStringColor("§6§lMagical Bucket §8» §7You must be a player to use this command!"));
+        } else {
+            commandSender.sendMessage(colorTranslate.translateStringColor("&c§6§lMagical Bucket §8» You must be a player to use this command"));
             return true;
         }
         return true;
